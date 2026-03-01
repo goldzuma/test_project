@@ -1,0 +1,27 @@
+/**
+ * Version 1: Brute-force O(n³)
+ *
+ * Advantages:
+ *   - Simple and easy to reason about
+ *   - No extra memory beyond the result array
+ *
+ * Disadvantages:
+ *   - O(n³) time — slow for large arrays
+ */
+
+utils.js / detectSums
+
+
+/**
+ * Version 2: Map-based O(n²) average-case
+ *
+ * Advantages:
+ *   - O(n²) time on average — much faster for large arrays with many distinct values
+ *
+ * Disadvantages:
+ *   - O(n) extra space for the value→indices map
+ *   - Worst-case time is still O(n³) when all values are identical (e.g. [0,0,0,...])
+ *     because every pair maps to O(n) candidate sum indices
+ */
+
+utils.js / detectSumsOptimized
