@@ -43,11 +43,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="App-card">
-        <h1 className="App-title">Detect Sums</h1>
-        <p className="App-subtitle">
-          Find all index triples <code>(pA, pB, sum)</code> where{' '}
-          <code>A[pA] + A[pB] = A[sum]</code>
-        </p>
+        <h1 className="App-title">Input an array of numbers</h1>
 
         <div className={`App-input-wrapper${showError ? ' App-input-wrapper--error' : showResults ? ' App-input-wrapper--valid' : ''}`}>
           <input
@@ -72,18 +68,6 @@ export default function App() {
 
         {showResults && (
           <div className="App-results">
-            <p className="App-results-summary">
-              Input:{' '}
-              <span className="App-array">
-                [{numbers.map((n, i) => (
-                  <span key={i} className="App-array-item">
-                    {i > 0 && <span className="App-comma">, </span>}
-                    <span className="App-index">A[{i}]</span>
-                    <span className="App-num">{n}</span>
-                  </span>
-                ))}]
-              </span>
-            </p>
 
             {results.length === 0 ? (
               <p className="App-no-results">No matching sums found.</p>
@@ -99,7 +83,6 @@ export default function App() {
                         <th>pA</th>
                         <th>pB</th>
                         <th>sum</th>
-                        <th>Equation</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -108,13 +91,6 @@ export default function App() {
                           <td><span className="App-badge">{pA}</span></td>
                           <td><span className="App-badge">{pB}</span></td>
                           <td><span className="App-badge App-badge--sum">{sum}</span></td>
-                          <td className="App-equation">
-                            <span className="App-eq-part">A[{pA}]<sub>{numbers[pA]}</sub></span>
-                            <span className="App-op"> + </span>
-                            <span className="App-eq-part">A[{pB}]<sub>{numbers[pB]}</sub></span>
-                            <span className="App-op"> = </span>
-                            <span className="App-eq-part App-eq-result">A[{sum}]<sub>{numbers[sum]}</sub></span>
-                          </td>
                         </tr>
                       ))}
                     </tbody>

@@ -25,8 +25,6 @@ export const detectSums = (array) => {
       }
     }
   }
-  console.log(results)
-
   return results;
 };
 
