@@ -1,13 +1,9 @@
 /* eslint-env mocha */
 import { expect } from 'chai';
-import { detectSums, detectSumsOptimized } from './utils';
+import { detectSums } from './utils';
 
-// Run the same suite against both implementations
-[
-  { name: 'detectSums (brute-force O(n³))', fn: detectSums },
-  { name: 'detectSumsOptimized (map-based O(n²) avg)', fn: detectSumsOptimized },
-].forEach(({ name, fn }) => {
-  describe(name, () => {
+describe('detectSums (map-based O(n²) avg)', () => {
+  const fn = detectSums;
 
     // ── Input validation ──────────────────────────────────────────────────────
 
@@ -156,4 +152,4 @@ import { detectSums, detectSumsOptimized } from './utils';
     });
 
   });
-});
+
